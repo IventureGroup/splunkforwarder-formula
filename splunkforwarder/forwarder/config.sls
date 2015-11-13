@@ -1,10 +1,5 @@
 {%- set self_cert = salt['pillar.get']('splunk:self_cert_filename', 'selfsignedcert.pem') %}
 
-include:
-  - splunkforwarder.certs
-  - splunkforwarder.user
-
-
 /opt/splunkforwarder/etc/apps/search/local:
   file:
     - directory
