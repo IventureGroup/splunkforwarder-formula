@@ -2,10 +2,8 @@
 {% set custom_version = salt['pillar.get']('splunkforwarder:package:version', False) %}
 
 include:
-  - splunkforwarder.certs
   - splunkforwarder.user
   - splunkforwarder.forwarder.config
-
 
 splunkforwarder:
   pkg.installed:
@@ -16,21 +14,3 @@ splunkforwarder:
 {% if custom_version %}
     - version: {{ custom_version }}
 {% endif %}
-  file:
-    - managed
-    - name: /etc/init.d/splunkforwarder
-    - source: salt://splunkforwarder/init.d/splunkforwarder.sh
-    - template: jinja
-    - mode: 500
-  service:
-    - running
-    - name: splunkforwarder
-    - enable: True
-    - restart: True
-    - require:
-      - pkg: splunkforwarder
-      - file: splunkforwarder
-      - file: /opt/splunkforwarder/etc/system/local/outputs.conf
-    - watch:
-      - pkg: splunkforwarder
-      - file: /opt/splunkforwarder/etc/system/local/outputs.conf
