@@ -1,10 +1,6 @@
 {% set custom_repo = salt['pillar.get']('splunkforwarder:package:repo', False) %}
 {% set custom_version = salt['pillar.get']('splunkforwarder:package:version', False) %}
 
-include:
-  - splunkforwarder.user
-  - splunkforwarder.forwarder.config
-
 splunkforwarder:
   pkg.installed:
     - name: {{ salt['pillar.get']('splunkforwarder:package:name') }}

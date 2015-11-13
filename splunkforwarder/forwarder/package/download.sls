@@ -2,12 +2,6 @@
 {%- set package_filename = pillar['splunkforwarder']['package_filename'] %}
 {%- set source_hash = pillar['splunkforwarder']['source_hash'] %}
 
-include:
-  - splunkforwarder.certs
-  - splunkforwarder.user
-  - splunkforwarder.forwarder.config
-
-
 get-splunkforwarder-package:
   file:
     - managed
