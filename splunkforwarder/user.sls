@@ -10,3 +10,6 @@ splunk_user:
       - splunk
     - require:
       - group: splunk_group
+    {% if salt['pillar.get'][splunkforwarder][uid] is defined %}
+    - uid: {{ pillar['splunkforwarder']['uid'] }}
+    {% endif %}

@@ -1,7 +1,7 @@
 # See README for more info about these settings
 
 splunkforwarder:
-
+  uid: 1337
 ### --> begin mutually exclusive
 ### EITHER: use your own custom package repository:
 
