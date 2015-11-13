@@ -1,4 +1,5 @@
 include:
+  - splunkforwarder.user
 {% if salt['pillar.get']('splunkforwarder:package:name', False) %}
   - splunkforwarder.forwarder.package.repo
 {% else %}
