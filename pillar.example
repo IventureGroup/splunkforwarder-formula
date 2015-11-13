@@ -19,7 +19,6 @@ splunkforwarder:
 
 ### <-- end mutually exclusive
 
-  cert_filename: selfsignedcert.pem
   intermediate: True
   forward_servers:
     - 1.2.3.4:9998
