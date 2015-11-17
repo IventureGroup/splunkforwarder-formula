@@ -4,10 +4,10 @@ include:
   - splunkforwarder.forwarder
 
 /opt/splunkforwarder/etc/system/local/inputs.conf:
-  file:
-    - managed
+  file.managed:
     - name: /opt/splunkforwarder/etc/system/local/inputs.conf
-    - source: salt://splunkforwarder/etc-system-local/inputs.conf
+    - source:
+      salt://splunkforwarder/files/etc/system/local/inputs.conf.template
     - template: jinja
     - user: splunk
     - group: splunk
@@ -18,9 +18,9 @@ include:
       - pkg: splunkforwarder
       - file: /opt/splunkforwarder/etc/certs/{{ self_cert }}
     - require_in:
-      - service: splunkforwarder
+      - service: splunk
     - watch_in:
-      - service: splunkforwarder
+      - service: splunk
 
 /opt/splunkforwarder/etc/apps/search/metadata:
   file.directory:
