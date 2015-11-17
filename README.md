@@ -98,18 +98,24 @@ splunkforwarder:
   download_base_url: http://your.domain.com/downloads/
 ```
 
-### splunkforwarder:forward_servers (List)
+### splunkforwarder:outputs:forward_servers (List)
 
-This is a list of servers to forward to.  Splunk will treat these like a round-robin and will forward
-to all of the servers in the list.  If/when one goes down the others will get the traffic.
+This is a list of servers to forward to.  Splunk will treat these like a
+round-robin and will forwardto all of the servers in the list.  If/when one
+goes down the others will get the traffic.
+
+You may also specify if you want to use SSL between Splunk Forwarder and Splunk
+Indexer Servers.
 
 Example:
 
 ```yaml
 splunkforwarder:
-  forward_servers:
-    - 1.2.3.4:9998
-    - 1.2.4.5:9998
+   outputs:
+     use_ssl: False
+     forward_servers:
+       - 1.2.3.4:9998
+       - 1.2.4.5:9998
 ```
 
 At least 1 server is required, presumably you can configure as many as you like.
