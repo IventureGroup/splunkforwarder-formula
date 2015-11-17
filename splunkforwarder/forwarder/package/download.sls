@@ -6,8 +6,7 @@ include:
   - splunkforwarder.forwarder.service
 
 get-splunkforwarder-package:
-  file:
-    - managed
+  file.managed:
     - name: /usr/local/src/{{ package_filename }}
     - source: {{ download_base_url }}{{ package_filename }}
     - source_hash: {{ source_hash }}
