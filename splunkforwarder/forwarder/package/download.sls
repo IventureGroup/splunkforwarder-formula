@@ -35,12 +35,6 @@ splunkforwarder:
     - name: dpkg -i {{ package_filename }}
     - watch:
       - cmd: is-splunkforwarder-package-outdated
-  file:
-    - managed
-    - name: /etc/init.d/splunkforwarder
-    - source: salt://splunkforwarder/init.d/splunkforwarder.sh
-    - template: jinja
-    - mode: 500
   service:
     - running
     - name: splunkforwarder
