@@ -20,9 +20,11 @@ splunkforwarder:
 ### <-- end mutually exclusive
 
   intermediate: True
-  forward_servers:
-    - 1.2.3.4:9998
-    - 1.2.4.5:9998
+  outputs:
+    use_ssl: False
+    forward_servers:
+      - 1.2.3.4:9998
+      - 1.2.4.5:9998
   inputs:
     monitor:
       nginx-access-log:
