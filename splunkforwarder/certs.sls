@@ -19,6 +19,7 @@ include:
     - require:
       - file: /opt/splunkforwarder/etc
 
+{% if salt['pillar.get']('splunk:certs', {}) %}
 {% for filename, config in salt['pillar.get']('splunk:certs', {}).iteritems() %}
 /opt/splunkforwarder/etc/certs/{{ filename }}:
   file.managed:
@@ -34,3 +35,4 @@ include:
     - watch_in:
       - service: splunk
 {% endfor %}
+{% endif %}
