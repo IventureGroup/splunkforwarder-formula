@@ -59,6 +59,17 @@ splunkforwarder:
   version: 6.2.0
 ```
 
+### splunkforwarder:uid
+
+Optionally specify a fixed UserID for the Splunk User.
+
+Example:
+
+```yaml
+splunkforwarder:
+  uid: 1337
+```
+
 ### splunkforwarder:package_filename
 
 The name of the package you are installing.
