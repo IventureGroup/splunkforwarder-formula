@@ -2,6 +2,9 @@
 {%- set package_filename = pillar['splunkforwarder']['package_filename'] %}
 {%- set source_hash = pillar['splunkforwarder']['source_hash'] %}
 
+include:
+  - splunkforwarder.forwarder.service
+
 get-splunkforwarder-package:
   file:
     - managed
@@ -35,18 +38,3 @@ splunkforwarder:
     - name: dpkg -i {{ package_filename }}
     - watch:
       - cmd: is-splunkforwarder-package-outdated
-  service:
-    - running
-    - name: splunkforwarder
-    - enable: True
-    - restart: True
-    - require:
-      - pkg: splunkforwarder
-      - cmd: splunkforwarder
-      - file: splunkforwarder
-      - file: /opt/splunkforwarder/etc/system/local/outputs.conf
-    - watch:
-      - pkg: splunkforwarder
-      - cmd: splunkforwarder
-      - file: splunkforwarder
-      - file: /opt/splunkforwarder/etc/system/local/outputs.conf
