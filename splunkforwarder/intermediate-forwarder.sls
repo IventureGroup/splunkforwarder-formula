@@ -32,7 +32,7 @@ include:
 /opt/splunkforwarder/etc/apps/search/metadata/local.metadata:
   file.managed:
     - name: /opt/splunkforwarder/etc/apps/search/metadata/local.metadata
-    - source: salt://splunkforwarder/files/etc/apps/search/metadata/local.metadata
+    - source: salt://splunkforwarder/files/etc/apps/search/metadata/local.metadata.template
     - template: jinja
     - user: splunk
     - group: splunk
