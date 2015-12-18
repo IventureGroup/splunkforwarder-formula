@@ -13,6 +13,7 @@ include:
     - user: splunk
     - group: splunk
     - mode: 400
+    - replace: False
     - contents_pillar: splunk:secret
     - require:
       - file: /opt/splunkforwarder/etc/auth
