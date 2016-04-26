@@ -1,6 +1,7 @@
 include:
   - splunkforwarder.forwarder
 
+{% if pillar.get('splunk:secret') %}
 /opt/splunkforwarder/etc/auth:
   file.directory:
     - user: splunk
@@ -19,3 +20,4 @@ include:
       - file: /opt/splunkforwarder/etc/auth
     - watch_in:
       - service: splunk
+{% endif %}
