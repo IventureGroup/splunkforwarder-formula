@@ -17,8 +17,6 @@ include:
     - require:
       - pkg: splunkforwarder
       - file: /opt/splunkforwarder/etc/certs/{{ self_cert }}
-    - require_in:
-      - service: splunk
     - watch_in:
       - service: splunk
 
@@ -40,7 +38,5 @@ include:
     - require:
       - pkg: splunkforwarder
       - file: /opt/splunkforwarder/etc/apps/search/metadata
-    - require_in:
-      - service: splunk
     - watch_in:
       - service: splunk

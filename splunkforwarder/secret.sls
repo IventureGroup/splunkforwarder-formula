@@ -17,7 +17,5 @@ include:
     - contents_pillar: splunk:secret
     - require:
       - file: /opt/splunkforwarder/etc/auth
-    - require_in:
-      - service: splunk
     - watch_in:
       - service: splunk

@@ -30,8 +30,6 @@ include:
     - require:
       - file: /opt/splunkforwarder/etc/certs
       - user: splunk
-    - require_in:
-      - service: splunk
     - watch_in:
       - service: splunk
 {% endfor %}
