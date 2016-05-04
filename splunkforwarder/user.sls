@@ -1,6 +1,9 @@
 splunk_group:
   group.present:
     - name: splunk
+    {% if pillar['splunkforwarder']['gid'] is defined %}
+    - uid: {{ pillar['splunkforwarder']['gid'] }}
+    {% endif %}
 
 splunk_user:
   user.present:
