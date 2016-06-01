@@ -5,6 +5,9 @@
 {% set check_self_cert = False %}
 {% endif %}
 
+include:
+  - splunkforwarder.forwarder.service
+
 /opt/splunkforwarder/etc/apps/search/local:
   file.directory:
     - user: splunk

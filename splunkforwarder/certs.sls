@@ -1,5 +1,6 @@
 include:
   - splunkforwarder.user
+  - splunkforwarder.forwarder
 
 /opt/splunkforwarder/etc:
   file.directory:
