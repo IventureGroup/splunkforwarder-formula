@@ -5,5 +5,5 @@ include:
 {% else %}
   - splunkforwarder.forwarder.package.download
 {% endif %}
-  - splunkforwarder.forwarder.config
   - splunkforwarder.forwarder.service
+  - splunkforwarder.forwarder.config

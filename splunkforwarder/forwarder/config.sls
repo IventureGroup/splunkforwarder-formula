@@ -5,9 +5,6 @@
 {% set check_self_cert = False %}
 {% endif %}
 
-include:
-  - splunkforwarder.forwarder.service
-
 /opt/splunkforwarder/etc/apps/search/local:
   file.directory:
     - user: splunk
@@ -38,9 +35,9 @@ include:
       - file: /opt/splunkforwarder/etc/certs/{{ self_cert }}
       {% endif %}
     - require_in:
-      - service: splunkforwarder-service
+      - service: splunk
     - watch_in:
-      - service: splunkforwarder-service
+      - service: splunk
 
 /opt/splunkforwarder/etc/system/local/outputs.conf:
   file.managed:
