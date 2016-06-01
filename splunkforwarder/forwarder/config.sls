@@ -9,8 +9,7 @@
   file.directory:
     - user: splunk
     - group: splunk
-    - dir_mode: 0755
-    - file_mode: 0600
+    - dir_mode: 755
     - recurse:
       - user
       - group
