@@ -19,5 +19,5 @@ include:
     - require:
       - file: /opt/splunkforwarder/etc/auth
     - watch_in:
-      - service: splunk
+      - service: splunkforwarder-service
 {% endif %}

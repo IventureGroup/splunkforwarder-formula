@@ -31,6 +31,6 @@ include:
       - file: /opt/splunkforwarder/etc/certs
       - user: splunk
     - watch_in:
-      - service: splunk
+      - service: splunkforwarder-service
 {% endfor %}
 {% endif %}

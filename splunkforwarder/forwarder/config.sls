@@ -35,9 +35,9 @@
       - file: /opt/splunkforwarder/etc/certs/{{ self_cert }}
       {% endif %}
     - require_in:
-      - service: splunk
+      - service: splunkforwarder-service
     - watch_in:
-      - service: splunk
+      - service: splunkforwarder-service
 
 /opt/splunkforwarder/etc/system/local/outputs.conf:
   file.managed:

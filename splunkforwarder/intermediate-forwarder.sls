@@ -18,7 +18,7 @@ include:
       - pkg: splunkforwarder
       - file: /opt/splunkforwarder/etc/certs/{{ self_cert }}
     - watch_in:
-      - service: splunk
+      - service: splunkforwarder-service
 
 /opt/splunkforwarder/etc/apps/search/metadata:
   file.directory:
@@ -39,4 +39,4 @@ include:
       - pkg: splunkforwarder
       - file: /opt/splunkforwarder/etc/apps/search/metadata
     - watch_in:
-      - service: splunk
+      - service: splunkforwarder-service
