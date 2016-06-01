@@ -9,11 +9,7 @@
   file.directory:
     - user: splunk
     - group: splunk
-    - dir_mode: 755
-    - recurse:
-      - user
-      - group
-      - mode
+    - mode: 755
 
 /opt/splunkforwarder/etc/apps/search/local/inputs.conf:
   file.managed:
