@@ -2,7 +2,7 @@
 {% set custom_version = salt['pillar.get']('splunkforwarder:package:version', False) %}
 
 splunkforwarder:
-  pkg.installed:
+  pkg.latest:
     - name: {{ salt['pillar.get']('splunkforwarder:package:name') }}
 {% if custom_repo %}
     - fromrepo: {{ custom_repo }}
