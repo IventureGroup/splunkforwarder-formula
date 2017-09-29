@@ -1,9 +1,7 @@
 splunkforwarder-service-enable:
-  cmd.wait:
+  cmd.run:
     - name: /opt/splunkforwarder/bin/splunk enable boot-start --answer-yes --no-prompt --accept-license
     - cwd: /root/
-    - watch:
-      - pkg: splunkforwarder
 
 splunkforwarder-service-start:
   cmd.wait:
