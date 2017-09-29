@@ -12,7 +12,7 @@ splunkforwarder-service-start:
     - watch:
       - pkg: splunkforwarder
 
-splunkforwader-service:
+splunkforwarder-service:
   service.running:
     - name: splunk
     - enable: True
